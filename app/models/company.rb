@@ -11,6 +11,10 @@ class Company < ActiveRecord::Base
   validates_confirmation_of :password, on: :create
   before_create :generate_authentication_token!
 
+  def self.for_index(params)
+    all
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if email = conditions.delete(:email)

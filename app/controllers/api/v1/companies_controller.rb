@@ -1,6 +1,10 @@
 class Api::V1::CompaniesController < ApplicationController
-
+  before_action :company_authenticate_with_token!, only: [:create]
   respond_to :json
+
+  def index
+    respond_with Company.for_index(params)
+  end
 
   def show
     respond_with Company.find(params[:id])

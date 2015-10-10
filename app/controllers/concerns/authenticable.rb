@@ -8,7 +8,7 @@ module Authenticable
    Company.where(auth_token: token).pluck(:id,:auth_token)[0]
   end
 
-  def user_authenticate_with_token!
+  def company_authenticate_with_token!
    authenticate_with_token! unless current_company.present?
   end
 
