@@ -1,0 +1,27 @@
+db_adapter: "db_adapter"
+db_user: "db_user"
+db_pass: "db_pass"
+db_pool: "db_pool"
+db_host
+secret_key_base: "secret_key_base"
+development:
+  db_name: "db_name"
+  mail_username: "mailer username"
+  mail_password: "mailer password"
+  mail_domain:   "mailer domain"
+  mail_address:  "mailer smtp address"
+  mail_port:     "mailer port"
+production:
+  db_name: "db_name"
+  mail_username: "mailer username"
+  mail_password: "mailer password"
+  mail_domain:   "mailer domain"
+  mail_address:  "mailer smtp address"
+  mail_port:     "mailer port"
+testing:
+  db_name: "db_name"
+  mail_username: "mailer username"
+  mail_password: "mailer password"
+  mail_domain:   "mailer domain"
+  mail_address:  "mailer smtp address"
+  mail_port:     "mailer port"
