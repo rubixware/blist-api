@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    scope module: :v1,
          constraints: ( ApiConstraints.new(version: 1, default: true) ) do
 
-       resources :companies,   only: [:show]
+       resources :companies,   only: [:show, :create, :update]
        resources :sessions,  only: [:company_create] do
 
          collection do
