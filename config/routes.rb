@@ -5,13 +5,7 @@ Rails.application.routes.draw do
          constraints: ( ApiConstraints.new(version: 1, default: true) ) do
 
        resources :companies,   only: [:show, :create, :update]
-       resources :sessions,  only: [:company_create] do
-
-         collection do
-           post :company, action: 'company_create', only: [:create]
-         end
-
-       end
+       resources :sessions,  only: [:create]
 
    end
  end
