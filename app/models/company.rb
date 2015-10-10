@@ -4,6 +4,7 @@ class Company < ActiveRecord::Base
 
   devise :database_authenticatable,
          :authentication_keys => [:email]
+  belongs_to :category 
 
   validates_presence_of     :email
   validates_uniqueness_of   :auth_token
