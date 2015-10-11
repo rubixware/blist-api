@@ -11,6 +11,7 @@ development:
   mail_domain:   "mailer domain"
   mail_address:  "mailer smtp address"
   mail_port:     "mailer port"
+  asset_host:    "asset_host"
 production:
   db_name: "db_name"
   mail_username: "mailer username"
@@ -18,6 +19,7 @@ production:
   mail_domain:   "mailer domain"
   mail_address:  "mailer smtp address"
   mail_port:     "mailer port"
+  asset_host:    "asset_host"
 testing:
   db_name: "db_name"
   mail_username: "mailer username"

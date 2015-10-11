@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   extend Sessionable
   include Tokenizable
+  mount_uploader :image, LogoUploader
 
   devise :database_authenticatable,
          :authentication_keys => [:email]
