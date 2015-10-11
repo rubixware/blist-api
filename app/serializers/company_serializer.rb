@@ -1,9 +1,5 @@
 class CompanySerializer < ActiveModel::Serializer
-  attributes :id, :email, :name, :description, :address_id, :category
-
-  def category
-    object.category.try(:name)
-  end
+  attributes :id, :email, :name, :description, :address_id, :category_id
 
   def attributes(*args)
     hash = super
