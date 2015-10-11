@@ -6,6 +6,7 @@ class Company < ActiveRecord::Base
          :authentication_keys => [:email]
   belongs_to :category
   has_one :contact
+  has_one :address
 
   validates_presence_of     :email
   validates_uniqueness_of   :auth_token

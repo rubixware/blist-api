@@ -1,5 +1,5 @@
 class CompanySerializer < ActiveModel::Serializer
-  attributes :id, :email, :name, :description, :address_id, :category_id, :tags
+  attributes :id, :email, :name, :description, :category_id, :tags
 
   def tags
     object.tags_objects
@@ -8,7 +8,9 @@ class CompanySerializer < ActiveModel::Serializer
   def attributes(*args)
     hash = super
     contact = object.contact
+    address = object.address
     hash.reverse_merge!(contact.json_for_company) unless contact.nil?
+    hash.reverse_merge!(address.json_for_company) unless address.nil?
     hash
   end
 
