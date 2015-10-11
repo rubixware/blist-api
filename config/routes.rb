@@ -5,8 +5,9 @@ Rails.application.routes.draw do
          constraints: ( ApiConstraints.new(version: 1, default: true) ) do
 
        resources :companies,   only: [:index, :show, :create, :update]
-       resources :categories, only: [:index]
-       resources :sessions,  only: [:create]
+       resources :categories,  only: [:index]
+       resources :tags,        only: [:index]
+       resources :sessions,    only: [:create]
 
    end
  end

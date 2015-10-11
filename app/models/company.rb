@@ -17,6 +17,10 @@ class Company < ActiveRecord::Base
     all
   end
 
+  def tags_objects
+    Tag.where(id: tags).pluck(:name)
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if email = conditions.delete(:email)

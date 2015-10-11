@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010232144) do
+ActiveRecord::Schema.define(version: 20151011011655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151010232144) do
     t.integer  "contact_id"
     t.integer  "address_id"
     t.string   "auth_token",             default: "", null: false
+    t.integer  "tags",                   default: [],              array: true
   end
 
   add_index "companies", ["auth_token"], name: "index_companies_on_auth_token", unique: true, using: :btree
@@ -54,6 +55,18 @@ ActiveRecord::Schema.define(version: 20151010232144) do
     t.string   "twitter"
     t.string   "phone"
     t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "serializers", force: :cascade do |t|
+    t.string   "Tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
